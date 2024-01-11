@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="mt-5 text-center">{{ destaque.titulo }}</h2>
+<div class="col-12 my-5 d-flex flex-column align-center">
+    <img src="{{destaque.imagem.url}}" alt="classificado de {{destaque.titulo}}" class="imagem-publicacao">
+    <p>
+        {{ destaque.texto | safe }}
+    </p>
+    <span> Autor: {{ destaque.autor }}</span>
+</div>
+<h3>Confira os últimos destaques</h3>
+<section class="row">
+    <article class="col-12 col-lg-4 section-destaque p-3">
+        {% for destaque in destaques %}
+        <a href="{% url 'destaque' id=destaque.id %}">
+            <img
+              src="{{ destaque.imagem.url }}"
+              alt="imagem de {{destaque.titulo}}"
+              class="w-100"
+            />
+        </a>
+        <p>{{ destaque.titulo }}</p>
+        {% endfor %}
+    </article>
+  </section>
+{% endblock %}

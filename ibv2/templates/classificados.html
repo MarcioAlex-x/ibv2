@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="mt-5 text-center">Página de classificados</h2>
+{% if classificados %}
+    <div class="row">
+        {% for classificado in classificados %}
+        <div class="col-lg-4 col-12 my-5">
+            <a href="https://web.whatsapp.com/send?phone={{ classificado.contato }}"><img src="{{classificado.banner.url}}" alt="classificado de {{classificado.titulo}}" class="w-100"></a>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>Em breve</p>
+{% endif %}
+    <div class="convite-classificado text-center mt-5">
+        <h3 class="mt-5">Exponha a sua marca conosco</h3>
+        <p>Para anunciar a sua marca em nossa página acesse a página de <a href="{% url 'contato' %}" class="text-secondary">contato</a> e fale conosco.</p>
+    </div>
+{% endblock %}

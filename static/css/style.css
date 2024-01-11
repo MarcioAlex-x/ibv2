@@ -1,0 +1,131 @@
+.btn-menu {
+    border: none;
+    color: aliceblue;
+}
+
+.btn-menu:hover {
+
+    outline: 0;
+}
+
+.logo-navbar {
+    width: 60px;
+}
+
+.nav-container {
+    background-color: #79011D;
+    box-sizing: border-box;
+}
+
+.navbar-nav a {
+    color: white;
+    transition: .5s;
+}
+
+.navbar-nav a:hover {
+    background-color: white;
+    border-radius: 3px;
+    color: #79011D;
+}
+
+.barra {
+    width: 2px;
+    height: 100%;
+    background-color: #79011D;
+    margin-right: 4px;
+}
+.article-destaque{
+    display: inline;
+    position: relative;
+}
+.titulo-destaque{
+    position: absolute;
+    bottom: 16px;
+    left: 32px;
+    color: aliceblue;
+    text-transform: capitalize;
+    font-family: "Allura", cursive;
+    font-size: 32px;
+}
+
+.imagem-publicacao {
+    width: 50%;
+    margin: 0 auto;
+}
+.article-publicacao{
+    display: inline;
+    position: relative;
+}
+.titulo-publicacao{
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    color: aliceblue;
+    text-transform: capitalize;
+    font-family: "Allura", cursive;
+}
+
+.contact-tools {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-tools a {
+    color: aliceblue;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contact-tools a p{
+    text-align: center;
+}
+
+footer {
+    background-color: #79011D;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.sub-footer {
+    color: #79011D;
+}
+
+.lema {
+    font-family: "Allura", cursive;
+    font-weight: 700;
+    font-style: normal;
+    color: #79011D;
+}
+.imagem-sobre{
+    margin: 0 auto;
+    width: 30%;
+}
+.container-sub-titulo{
+    margin-left: 8px;
+    padding: 2px;
+    display: flex;
+}
+
+.barra {
+    width: 1px;
+    height: 100%;
+    background-color: #79011D;
+}
+
+@media screen and (max-width:390px) {
+    .navbar-collapse {
+        background-image: url('/static/imagens/background-menu.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .contact-tools a {
+        font-size: 14px;
+    }
+    .imagem-sobre{
+        width: 75%;
+    }
+}

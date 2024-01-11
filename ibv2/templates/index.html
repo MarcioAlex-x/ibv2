@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {% block content %}
+    <section class="row">
+    <article class="col-12 section-destaque p-3 article-destaque">
+        
+        <h2 class="mt-5 text-center" data-aos="zoom-in" data-aos-duration="1000">Somos a igreja Betel do Valentina II</h2>
+        <h2 class="text-center lema" data-aos="zoom-in" data-aos-duration="1000">Conhecer, Amar e Servir</h2>
+
+        <!-- Destaque -->
+
+        <a href="{% url 'destaque' id=ultimo_destaque.id %}">
+            <img
+                src="{{ ultimo_destaque.imagem.url }}"
+                alt="imagem de {{ultimo_destaque.titulo}}"
+                class="w-100"
+            />
+        </a>
+        <h3 class="titulo-destaque">{{ ultimo_destaque.titulo }}</h3>
+             
+    </article>
+    </section>
+<!-- Publicações -->
+<div class="row my-5">
+    <div class="col-lg-8 col-12">
+        <section class="row">
+            <div class="container-sub-titulo">
+                <div class="barra"></div>
+                <h3>Nossas publicações</h3>
+            </div>
+            {% for publicacao in publicacoes %}
+                <article class="col-lg-4 col-12 article-publicacao my-2" >
+                    {% if publicacao %}
+                    <a href="{% url 'publicacao' id=publicacao.id %}"
+                    ><img src="{{ publicacao.imagem.url }}" alt="imagem da publicação de {{publicacao.titulo}}" class="w-100"></a>
+                    <h4 class="titulo-publicacao">{{ publicacao.titulo }}</h4>
+                    {% else %}
+                    <p>Sem publicações</p>
+                    {% endif %}
+                </article>
+            {% endfor %}
+            <h3></h3>
+        </section>
+    </div>
+    <div class="col-lg-4 col-12">
+        <div class="container-sub-titulo">
+            <div class="barra"></div>
+            <h3>Classificados</h3>
+        </div>
+        {% for classificado in classificados %}
+            <a href="https://web.whatsapp.com/send?phone={{ classificado.contato }}"><img src="{{classificado.banner.url}}" alt="classificado de {{classificado.titulo}}" class="w-100 p-3"></a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

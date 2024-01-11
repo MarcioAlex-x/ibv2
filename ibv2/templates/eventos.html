@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="mt-5 text-center">Nossos eventos</h2>
+    <div class="row">
+        {% for evento in eventos %}
+        <div class="col-lg-4 col-12 my-5" 
+        data-aos="flip-right"
+        data-aos-easing="ease-in-back"
+        data-aos-duration="1000">
+            <img src="{{evento.imagem.url}}" alt="classificado de {{evento.titulo}}" class="w-100">
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
